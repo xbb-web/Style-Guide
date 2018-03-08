@@ -1,2 +1,3 @@
 # Style-Guide
-前端代码规范
+* JavaScript 编码风格指南
+* 命名指南
