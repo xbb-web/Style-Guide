@@ -143,23 +143,23 @@ data () {
 
 #### 5、命名
 
-JavaScript遵照了驼峰式命名法，驼峰式又分为大、小驼峰式两种，其中小驼峰式（Camel Case）命名法是由小写字母开头，后续每个单词首字母大写，比如：
+命名主要遵循三种方式：
 
-```javascript
-let thisIsMyName
-const defaultConfig
-```
-
-而大驼峰（Pascal Case）式命名法则是大写字母开头，比如：
+1. 驼峰式命名 (camelCase)，即首字母小写，后续单词首字母大写；
+2. 帕斯卡命名 (PascalCase)，即首字母大写，后续单词首字母大写；
+3. 横线分隔命名 (kebab-case)，即所有字母全部小写，单词之间用'-'隔开，主要应用在dom中。
 
 ```javascript
 function Person () {}
-import CommonConfig from '***'
+import CommonConfig from './common-config'
+let count = 10
+const myName = 'Nicolas'
+<common-config></common-config>
 ```
 
 ##### 变量和函数
 
-变量名前缀应该是名字，而函数名前缀应该是动词，并且均应遵循小驼峰式命名法，如：
+变量名前缀应该是名字，而函数名前缀应该是动词，并且均应遵循驼峰式命名法，如：
 
 ```javascript
 let count = 10
@@ -172,13 +172,30 @@ function getName () {}
 
 常用的函数动词前缀有 is, has, get, set 等
 
-##### 构造函数和组件名
+##### 单文件组件文件
 
-构造函数和组件名遵循大驼峰式命名法，比如：
+单文件组件命名使用横线分隔 (kebab-case)，在script中引入时，按照大驼峰式命名(PascalCase)，如下：
 
 ```javascript
-function Person () {}
-import CommonConfig from '***'
+import CommonConfig from './common-config'
+<common-config></common-config>
+```
+
+基础组件命名 (也就是展示类的、无逻辑的或无状态的组件) 全部使用v作为特定的前缀开头：
+
+```javascript
+<v-switch></v-switch>
+import VSwitch from './v-switch'
+```
+
+##### 配置文件、枚举类等全部以大写的方式命名
+
+```javascript
+/* url config */
+const URL = {
+    .....
+}
+export URL
 ```
 
 
